@@ -7,8 +7,8 @@ class @Game
     canvas = document.getElementById('set')
     ctx = canvas.getContext('2d')
 
-    for i in [0..2]
-      for j in [0..3]
+    for i in [0..3]
+      for j in [0..2]
         card = @deck.cards.shift()
         cardView = new CardView(card, ctx, i, j)
         cardView.render()
