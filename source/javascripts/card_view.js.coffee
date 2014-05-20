@@ -6,35 +6,8 @@ class @CardView
     @ctx.strokeText("#{@card.number} #{@card.color} #{@card.shading} #{@card.shape}", 400*@j+50, 250*@i+50)
     switch @card.shape
       when 'triangle'
-        @_renderTriangle()
+        new NumberView(TriangleRenderer, @card, @ctx, @i, @j).render()
       when 'circle'
-        @_renderCircle()
+        new NumberView(CircleRenderer, @card, @ctx, @i, @j).render()
       when 'square'
-        @_renderSquare()
-
-  _renderCircle: ->
-    @ctx.beginPath()
-    @ctx.arc(400*@j+160,250*@i+140,40,0,Math.PI*2,true)
-    @ctx.fillStyle = @card.color
-    @ctx.fill()
-
-  _renderSquare: ->
-    @ctx.beginPath()
-    @ctx.moveTo(400*@j+120,250*@i+100)
-    @ctx.lineTo(400*@j+195,250*@i+100)
-    @ctx.lineTo(400*@j+195,250*@i+175)
-    @ctx.lineTo(400*@j+120,250*@i+175)
-    @ctx.closePath()
-    @ctx.stroke()
-    @ctx.fillStyle = @card.color
-    @ctx.fill()
-
-  _renderTriangle: ->
-    @ctx.beginPath()
-    @ctx.moveTo(400*@j+115,250*@i+175)
-    @ctx.lineTo(400*@j+160,250*@i+100)
-    @ctx.lineTo(400*@j+205,250*@i+175)
-    @ctx.closePath()
-    @ctx.stroke()
-    @ctx.fillStyle = @card.color
-    @ctx.fill()
+        new NumberView(SquareRenderer, @card, @ctx, @i, @j).render()
