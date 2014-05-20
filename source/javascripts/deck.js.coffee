@@ -4,7 +4,7 @@ class @Deck
 
   _cardValues: ->
     colors = ['red', 'green', 'purple']
-    shapes = ['oval', 'diamond', 'squiggle']
+    shapes = ['circle', 'square', 'triangle']
     shadings = ['solid', 'striped', 'outline']
     numbers = ['one', 'two', 'three']
 
