@@ -10,5 +10,7 @@ class @Game
     for i in [0..3]
       for j in [0..2]
         card = @deck.cards.shift()
-        cardView = new CardView(card, ctx, i, j)
+        card.xPosition = j
+        card.yPosition = i
+        cardView = new CardView(card, ctx)
         cardView.render()
