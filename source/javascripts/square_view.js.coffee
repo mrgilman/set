@@ -3,9 +3,21 @@ class @SquareView
 
   render: (offset) ->
     @ctx.beginPath()
-    @ctx.moveTo(@card.xPosition+135+offset,@card.yPosition+75)
-    @ctx.lineTo(@card.xPosition+210+offset,@card.yPosition+75)
-    @ctx.lineTo(@card.xPosition+210+offset,@card.yPosition+150)
-    @ctx.lineTo(@card.xPosition+135+offset,@card.yPosition+150)
+    @ctx.moveTo(@_leftX(offset), @_topY())
+    @ctx.lineTo(@_rightX(offset), @_topY())
+    @ctx.lineTo(@_rightX(offset), @_bottomY())
+    @ctx.lineTo(@_leftX(offset), @_bottomY())
     @ctx.closePath()
     new ColorView(@card, @ctx).render()
+
+  _leftX: (offset) ->
+    @card.xPosition + GameView.TILE_WIDTH * 0.4 + offset
+
+  _rightX: (offset) ->
+    @card.xPosition + GameView.TILE_WIDTH * 0.6 + offset
+
+  _topY: ->
+    @card.yPosition + GameView.TILE_HEIGHT * 0.3
+
+  _bottomY: ->
+    @card.yPosition + GameView.TILE_HEIGHT * 0.6

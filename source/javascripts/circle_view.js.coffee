@@ -7,7 +7,7 @@ class @CircleView
     new ColorView(@card, @ctx).render()
 
   _xCoordinate: (offset) ->
-    @card.xPosition + 175 + offset
+    @card.xPosition + 0.5 * GameView.TILE_WIDTH + offset
 
   _yCoordinate: ->
-    @card.yPosition + 115
+    @card.yPosition + 0.5 * GameView.TILE_HEIGHT
