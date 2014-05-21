@@ -1,8 +1,8 @@
 class @Deck
   constructor: ->
-    @cards = @_cardValues().map (card) -> new Card(card)
+    @cards = @_createCards()
 
-  _cardValues: ->
+  _createCards: ->
     colors = ['red', 'green', 'purple']
     shapes = ['circle', 'square', 'triangle']
     shadings = ['solid', 'shaded', 'outline']
@@ -13,7 +13,7 @@ class @Deck
       for shape in shapes
         for shading in shadings
           for number in numbers
-            cards.push [color, shape, shading, number]
+            cards.push new Card(color, shape, shading, number)
 
     cards
 
