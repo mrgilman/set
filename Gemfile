@@ -2,6 +2,8 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
+gem 'middleman-gh-pages'
+
 gem "middleman", "~>3.3.2"
 
 # Live-reloading plugin
