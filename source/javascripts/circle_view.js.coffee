@@ -3,5 +3,11 @@ class @CircleView
 
   render: (offset) ->
     @ctx.beginPath()
-    @ctx.arc(400*@card.xPosition+195+offset,250*@card.yPosition+140,40,0,Math.PI*2,true)
+    @ctx.arc(@_xCoordinate(offset), @_yCoordinate(), 40, 0, Math.PI*2, true)
     new ColorView(@card, @ctx).render()
+
+  _xCoordinate: (offset) ->
+    @card.xPosition + 175 + offset
+
+  _yCoordinate: ->
+    @card.yPosition + 115

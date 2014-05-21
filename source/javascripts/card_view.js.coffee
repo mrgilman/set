@@ -3,7 +3,7 @@ class @CardView
 
   render: ->
     @ctx.lineWidth = 2
-    @ctx.strokeRect(400 * @card.xPosition + 50, 250 * @card.yPosition + 50, 300, 180)
+    @ctx.strokeRect(@_xCoordinate(), @_yCoordinate(), 300, 180)
     switch @card.shape
       when 'triangle'
         new NumberView(new TriangleView(@card, @ctx)).render()
@@ -11,3 +11,9 @@ class @CardView
         new NumberView(new CircleView(@card, @ctx)).render()
       when 'square'
         new NumberView(new SquareView(@card, @ctx)).render()
+
+  _xCoordinate: ->
+    @card.xPosition + 25
+
+  _yCoordinate: ->
+    @card.yPosition + 25

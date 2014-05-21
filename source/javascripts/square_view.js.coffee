@@ -3,9 +3,9 @@ class @SquareView
 
   render: (offset) ->
     @ctx.beginPath()
-    @ctx.moveTo(400*@card.xPosition+155+offset,250*@card.yPosition+100)
-    @ctx.lineTo(400*@card.xPosition+230+offset,250*@card.yPosition+100)
-    @ctx.lineTo(400*@card.xPosition+230+offset,250*@card.yPosition+175)
-    @ctx.lineTo(400*@card.xPosition+155+offset,250*@card.yPosition+175)
+    @ctx.moveTo(@card.xPosition+135+offset,@card.yPosition+75)
+    @ctx.lineTo(@card.xPosition+210+offset,@card.yPosition+75)
+    @ctx.lineTo(@card.xPosition+210+offset,@card.yPosition+150)
+    @ctx.lineTo(@card.xPosition+135+offset,@card.yPosition+150)
     @ctx.closePath()
     new ColorView(@card, @ctx).render()
