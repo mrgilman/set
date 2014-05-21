@@ -1,4 +1,4 @@
-class @TriangleRenderer
+class @TriangleView
   constructor: (@card, @ctx, @i, @j) ->
 
   render: (offset) ->

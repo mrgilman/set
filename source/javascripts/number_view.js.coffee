@@ -1,16 +1,14 @@
 class @NumberView
-  constructor: (@ShapeRenderer, @card, @ctx, @i, @j) ->
+  constructor: (@shapeView) ->
+    @card = @shapeView.card
 
   render: ->
     switch @card.number
       when 'one'
-        r = new @ShapeRenderer(@card, @ctx, @i, @j)
-        r.render(0)
+        @shapeView.render(0)
       when 'two'
         for offset in [-50, 50]
-          r = new @ShapeRenderer(@card, @ctx, @i, @j)
-          r.render(offset)
+          @shapeView.render(offset)
       when 'three'
         for offset in [-100, 0, 100]
-          r = new @ShapeRenderer(@card, @ctx, @i, @j)
-          r.render(offset)
+          @shapeView.render(offset)

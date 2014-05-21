@@ -1,4 +1,4 @@
-class @CircleRenderer
+class @CircleView
   constructor: (@card, @ctx, @i, @j) ->
 
   render: (offset) ->

@@ -1,4 +1,4 @@
-class @SquareRenderer
+class @SquareView
   constructor: (@card, @ctx, @i, @j) ->
 
   render: (offset) ->
