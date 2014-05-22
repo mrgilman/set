@@ -21,3 +21,6 @@ class @Deck
     for i in [@cards.length-1..1]
       j = Math.floor Math.random() * (i + 1)
       [@cards[i], @cards[j]] = [@cards[j], @cards[i]]
+
+  deal: ->
+    card = @cards.pop()

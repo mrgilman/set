@@ -1,5 +1,5 @@
 class @TriangleView
-  constructor: (@card, @ctx) ->
+  constructor: (@card, @position, @ctx) ->
 
   render: (offset) ->
     @ctx.beginPath()
@@ -10,16 +10,16 @@ class @TriangleView
     new ColorView(@card, @ctx).render()
 
   _bottomLeftX: (offset) ->
-    @card.xPosition + (GameView.TILE_WIDTH * 0.37) + offset
+    @position.x + (GameView.TILE_WIDTH * 0.37) + offset
 
   _bottomRightX: (offset) ->
-    @card.xPosition + (GameView.TILE_WIDTH * 0.63) + offset
+    @position.x + (GameView.TILE_WIDTH * 0.63) + offset
 
   _bottomY: ->
-    @card.yPosition + (GameView.TILE_HEIGHT * 0.6)
+    @position.y + (GameView.TILE_HEIGHT * 0.6)
 
   _topX: (offset) ->
-    @card.xPosition + (GameView.TILE_WIDTH * 0.5) + offset
+    @position.x + (GameView.TILE_WIDTH * 0.5) + offset
 
   _topY: ->
-    @card.yPosition + (GameView.TILE_HEIGHT * 0.3)
+    @position.y + (GameView.TILE_HEIGHT * 0.3)

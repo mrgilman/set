@@ -1,5 +1,5 @@
 class @CircleView
-  constructor: (@card, @ctx) ->
+  constructor: (@card, @position, @ctx) ->
 
   render: (offset) ->
     @ctx.beginPath()
@@ -7,10 +7,10 @@ class @CircleView
     new ColorView(@card, @ctx).render()
 
   _xCoordinate: (offset) ->
-    @card.xPosition + 0.5 * GameView.TILE_WIDTH + offset
+    @position.x + 0.5 * GameView.TILE_WIDTH + offset
 
   _yCoordinate: ->
-    @card.yPosition + 0.46 * GameView.TILE_HEIGHT
+    @position.y + 0.46 * GameView.TILE_HEIGHT
 
   _radius: ->
     0.11 * GameView.TILE_WIDTH

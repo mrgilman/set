@@ -4,5 +4,5 @@ class @Game
 
   start: ->
     @deck.shuffle()
-    view = new GameView(@deck)
-    view.render()
+    view = new GameView
+    view.dealCards(@deck)

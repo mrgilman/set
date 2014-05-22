@@ -1,5 +1,5 @@
 class @SquareView
-  constructor: (@card, @ctx) ->
+  constructor: (@card, @position, @ctx) ->
 
   render: (offset) ->
     @ctx.beginPath()
@@ -11,13 +11,13 @@ class @SquareView
     new ColorView(@card, @ctx).render()
 
   _leftX: (offset) ->
-    @card.xPosition + GameView.TILE_WIDTH * 0.4 + offset
+    @position.x + GameView.TILE_WIDTH * 0.4 + offset
 
   _rightX: (offset) ->
-    @card.xPosition + GameView.TILE_WIDTH * 0.6 + offset
+    @position.x + GameView.TILE_WIDTH * 0.6 + offset
 
   _topY: ->
-    @card.yPosition + GameView.TILE_HEIGHT * 0.3
+    @position.y + GameView.TILE_HEIGHT * 0.3
 
   _bottomY: ->
-    @card.yPosition + GameView.TILE_HEIGHT * 0.6
+    @position.y + GameView.TILE_HEIGHT * 0.6
