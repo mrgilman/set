@@ -2,7 +2,7 @@ class @CardView
   constructor: (@card, @ctx) ->
 
   render: ->
-    @ctx.lineWidth = 2
+    @ctx.lineWidth = 3
     @ctx.strokeRect(@_xCoordinate(), @_yCoordinate(), @_cardWidth(), @_cardHeight())
     switch @card.shape
       when 'triangle'

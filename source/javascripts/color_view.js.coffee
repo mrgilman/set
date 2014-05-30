@@ -13,6 +13,9 @@ class @ColorView
       when 'shaded'
         @ctx.fillStyle = @_color(0.4)
         @ctx.fill()
+        @ctx.strokeStyle = @_color(1)
+        @ctx.stroke()
+        @ctx.strokeStyle = 'black'
 
   _color: (opacity) ->
     switch @card.color
