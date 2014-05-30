@@ -6,7 +6,7 @@
     }
 
     CardView.prototype.render = function() {
-      this.ctx.lineWidth = 2;
+      this.ctx.lineWidth = 3;
       this.ctx.strokeRect(this._xCoordinate(), this._yCoordinate(), this._cardWidth(), this._cardHeight());
       switch (this.card.shape) {
         case 'triangle':

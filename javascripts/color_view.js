@@ -16,7 +16,10 @@
           return this.ctx.strokeStyle = 'black';
         case 'shaded':
           this.ctx.fillStyle = this._color(0.4);
-          return this.ctx.fill();
+          this.ctx.fill();
+          this.ctx.strokeStyle = this._color(1);
+          this.ctx.stroke();
+          return this.ctx.strokeStyle = 'black';
       }
     };
 

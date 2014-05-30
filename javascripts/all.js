@@ -22,7 +22,7 @@
     }
 
     CardView.prototype.render = function() {
-      this.ctx.lineWidth = 2;
+      this.ctx.lineWidth = 3;
       this.ctx.strokeRect(this._xCoordinate(), this._yCoordinate(), this._cardWidth(), this._cardHeight());
       switch (this.card.shape) {
         case 'triangle':
@@ -103,7 +103,10 @@
           return this.ctx.strokeStyle = 'black';
         case 'shaded':
           this.ctx.fillStyle = this._color(0.4);
-          return this.ctx.fill();
+          this.ctx.fill();
+          this.ctx.strokeStyle = this._color(1);
+          this.ctx.stroke();
+          return this.ctx.strokeStyle = 'black';
       }
     };
 
